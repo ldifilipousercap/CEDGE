@@ -1,0 +1,35 @@
+COLUMN TABLE "FT_MARD"(
+	CD_DW_MATERIAL INTEGER ,			--	DW_MATERIAL	
+	CD_CENTRO NVARCHAR(4) NOT NULL,			--	CENTRO	
+	CD_LGORT NVARCHAR(4) NOT NULL,			--	LGORT	Storage location
+	CD_DW_CEBE SMALLINT ,			--	PRCTL	Profit Center
+	CD_PSTAT NVARCHAR(15), 			--	PSTAT	Maintenance status
+	CD_LVORM NVARCHAR(1),   			--	LVORM	Flag Material for Deletion at Storage Location Level
+	CD_EJERCICIO VARCHAR(4), 			--	EJERCICIO	
+	CD_MES VARCHAR(2), 			--	MES	
+	NU_LABST DECIMAL(13, 3) ,			--	LABST	Valuated Unrestricted-Use Stock
+	NU_UMLME DECIMAL(13, 3) ,			--	UMLME	Stock in transfer (from one storage location to another)
+	NU_EINME DECIMAL(13, 3) ,			--	EINME	Total Stock of All Restricted Batches
+	NU_SPEME DECIMAL(13, 3) ,			--	SPEME	Blocked stock
+	NU_RETME DECIMAL(13, 3) ,			--	RETME	Blocked Stock Returns
+	NU_VMLAB DECIMAL(13, 3) ,			--	VMLAB	Valuated unrestricted-use stock in previous period
+	NU_VMUML DECIMAL(13, 3) ,			--	VMUML	Stock in transfer, previous period
+	NU_VMEIN DECIMAL(13, 3) ,			--	VMEIN	Restricted-use stock in previous period
+	NU_VMSPE DECIMAL(13, 3) ,			--	VMSPE	Blocked stock of previous period
+	NU_VMRET DECIMAL(13, 3) ,			--	VMRET	Blocked stock returns, previous period
+	FL_EXPPG NVARCHAR(1),			--	EXPPG	Preference indicator (deactivated)
+	CD_LGPBE NVARCHAR(10),			--	LGPBE	Storage Bin
+	FE_CREACION DATE,			--	ERSDA	Created On
+	NU_VKLAB DECIMAL(13, 2) ,			--	VKLAB	Stock value of a value-only material at sales price
+	VL_VKUML DECIMAL(13, 2) ,			--	VKUML	Sales value in stock transfer (SLOc to SLoc)
+	NU_BSKRF DOUBLE ,			--	BSKRF	Inventory correction factor
+	FL_MDRUE NVARCHAR(1),			--	MDRUE	MARDH rec. already exists for per. before last of MARD per.
+	PRIMARY KEY (
+		"CD_DW_MATERIAL",
+		"CD_CENTRO",
+		"CD_LGORT",
+		"CD_EJERCICIO", 					
+		"CD_MES"
+	)
+)
+UNLOAD PRIORITY 5 AUTO MERGE;

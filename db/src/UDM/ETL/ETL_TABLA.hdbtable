@@ -1,0 +1,9 @@
+COLUMN TABLE "ETL_TABLA"(
+	"CD_TABLA" SMALLINT,
+	"NM_TABLA" NVARCHAR(100),
+	"TIPO_TABLA" NVARCHAR(1) DEFAULT 'O', --Para identificar si es una tabla del sistema
+	PRIMARY KEY (
+		"CD_TABLA" 
+	)
+)
+UNLOAD PRIORITY 5 AUTO MERGE;

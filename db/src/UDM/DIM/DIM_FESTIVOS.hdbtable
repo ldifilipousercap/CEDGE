@@ -1,0 +1,10 @@
+COLUMN TABLE "DIM_FESTIVOS"( --Basado en la tabla THOC SAP Public Holiday Calendar Table and data y la THOL SAP Public Holidays Table and data
+	FE_DATUM DATE,		  --Dia Festivo	
+	CD_FTGID VARCHAR(3),  --Public holiday key
+	CD_SORT VARCHAR (10), --Sort field for public holidays
+	CD_IDENT VARCHAR(5),  --Public Holiday Calendar
+	PRIMARY KEY (
+		CD_IDENT, FE_DATUM, CD_FTGID
+	)
+)
+UNLOAD PRIORITY 5 AUTO MERGE;

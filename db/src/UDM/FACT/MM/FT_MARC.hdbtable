@@ -1,0 +1,43 @@
+COLUMN TABLE "FT_MARC"(
+	CD_DW_MATERIAL INTEGER ,			--	DW_MATERIAL	
+	CD_CENTRO NVARCHAR(4) NOT NULL,			--	CENTRO	
+	CD_DW_CEBE SMALLINT ,			--	PRCTL	Profit Center
+	CD_PSTAT NVARCHAR(15),			--	PSTAT	Maintenance status
+	CD_LVORM NVARCHAR(1),			--	LVORM	Flag Material for Deletion at Plant Level
+	FL_BWTTY NVARCHAR(1),			--	BWTTY	Valuation Category
+	CD_MMSTA NVARCHAR(2),			--	MMSTA	Plant-Specific Material Status
+	CD_MMSTD VARCHAR(8),			--	MMSTD	Date from which the plant-specific material status is valid
+	CD_EKGRP NVARCHAR(3),			--	EKGRP	Purchasing group
+	CD_DISLS NVARCHAR(2),			--	DISLS	Lot size (materials planning)
+	FL_BESKZ NVARCHAR(1),			--	BESKZ	Procurement Type
+	NU_MINBE DECIMAL(13, 3) ,			--	MINBE	Reorder point
+	NU_BSTMI DECIMAL(13, 3) ,			--	BSTMI	Minimum lot size
+	NU_BSTMA DECIMAL(13, 3) ,			--	BSTMA	Maximum lot size
+	NU_BSTFE DECIMAL(13, 3) ,			--	BSTFE	Fixed lot size
+	NU_MABST DECIMAL(13, 3) ,			--	MABST	Maximum stock level
+	FL_LAGPR NVARCHAR(1),			--	LAGPR	Storage costs indicator
+	FL_KZAUS NVARCHAR(1),			--	KZAUS	Discontinuation indicator
+	NU_BASMG DECIMAL(13, 3) ,			--	BASMG	Base quantity
+	NU_MAXLZ DECIMAL(5) ,			--	MAXLZ	Maximum storage period
+	CD_HERBL NVARCHAR(2),			--	HERBL	State of manufacture
+	CD_UMLMC DECIMAL(13, 3) ,			--	UMLMC	Stock in transfer (plant to plant)
+	CD_HERKL NVARCHAR(3),			--	HERKL	Country of origin of the material
+	CD_MTVER NVARCHAR(4),			--	MTVER	Export/import material group
+	NU_TRAME DECIMAL(13, 3) ,			--	TRAME	Stock in transit
+	NU_VKUMC DECIMAL(13, 2) ,			--	VKUMC	Stock transfer sales value (plant to plant) for VO material
+	CD_MES VARCHAR(2),			--	LFMON	Current period (posting period)
+	CD_EJERCICIO VARCHAR(4),			--	LFGJA	Fiscal Year of Current Period
+	CD_EISLO DECIMAL(13, 3) ,			--	EISLO	Minimum Safety Stock
+	CD_PKGRP NVARCHAR(18),			--	/VSO/R_PKGRP	Packing Group of the Material (VSO)
+	CD_PRTIME DECIMAL(3) ,			--	GI_PR_TIME	Goods Issue Processing Time in Days
+	CD_MIN_TROC VARCHAR(3),			--	MIN_TROC	Minimum Target Range of Coverage
+	CD_MAX_TROC VARCHAR(3),			--	MAX_TROC	Maximum Target Range of Coverage
+	NU_TARGET_STOCK DECIMAL(13, 3) ,			--	TARGET_STOCK	Target Stock
+	PRIMARY KEY (
+		"CD_DW_MATERIAL",
+		"CD_CENTRO",
+		"CD_EJERCICIO", 					
+		"CD_MES"	
+	)
+)
+UNLOAD PRIORITY 5 AUTO MERGE;
