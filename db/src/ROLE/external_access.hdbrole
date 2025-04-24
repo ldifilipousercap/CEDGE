@@ -1,6 +1,6 @@
 {
   "role": {
-    "name": "external_access",
+    "name": "CEDGE::external_access",
     "schema_privileges": [
       {
         "reference": "CEDGE_1",
