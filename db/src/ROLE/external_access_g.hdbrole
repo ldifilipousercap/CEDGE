@@ -1,0 +1,29 @@
+{
+  "role": {
+    "name": "external_access_g#",
+    "schema_privileges": [
+      {
+        "reference": "CEDGE_1",
+        "privileges": [
+          "DELETE",
+          "EXECUTE",
+          "INSERT",
+          "SELECT CDS METADATA",
+          "SELECT",
+          "SELECT METADATA",
+          "UPDATE",
+          "CREATE TEMPORARY TABLE"
+        ],
+        "privileges_with_grant_option": [
+          "CREATE TEMPORARY TABLE",
+          "DELETE",
+          "INSERT",
+          "EXECUTE",
+          "SELECT",
+          "SELECT CDS METADATA",
+          "SELECT METADATA"
+        ]
+      }
+    ]
+  }
+}

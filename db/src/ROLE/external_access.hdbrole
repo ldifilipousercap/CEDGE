@@ -1,0 +1,21 @@
+{
+  "role": {
+    "name": "external_access",
+    "schema_privileges": [
+      {
+        "reference": "CEDGE_1",
+        "privileges": [
+          "SELECT",
+          "INSERT",
+          "EXECUTE",
+          "SELECT CDS METADATA",
+          "SELECT METADATA",
+          "UPDATE",
+          "ALTER",
+          "CREATE TEMPORARY TABLE",
+          "DELETE"
+        ]
+      }
+    ]
+  }
+}
