@@ -9,6 +9,7 @@ modules:
   - name: hdi_db
     properties:
       TARGET_CONTAINER: ~{hdi-container-name}
+  - name: DWH_USER
 resources:
 - name: hdi_db
   type: com.sap.xs.hdi-container
@@ -17,3 +18,7 @@ resources:
       schema: CEDGE
   properties:
     hdi-container-name: ${service-name}
+- name: DWH_USER
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: remote_system_grant_service
